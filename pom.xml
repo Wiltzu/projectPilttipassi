@@ -12,10 +12,18 @@
 		<java.version>1.7</java.version>
 		<junit.version>4.10</junit.version>
 		<hibernate.version>4.1.6.Final</hibernate.version>
+		<mysql.version>5.1.21</mysql.version>
 		<findbugs.version>2.3.2</findbugs.version>
 	</properties>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.version}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

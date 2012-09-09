@@ -1,16 +1,26 @@
 package fi.nottingham.pilttipassi.controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import fi.nottingham.pilttipassi.service.UserDaoTestService;
+
 /**
  * Servlet implementation class firstServlet
  */
+@Controller
 public class FirstServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	@Autowired
+	private UserDaoTestService userDaoTestService;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -25,9 +35,12 @@ public class FirstServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//response.getWriter().print("HURRDURR!");
-		response.getOutputStream().print("outputstream");
-		response.getOutputStream().print("outputstream2");
+		response.getOutputStream().println("outputstream");
+		response.getOutputStream().println("outputstream2");
 		
+		String gottenUserName = userDaoTestService.doDBShit("testi");
+		
+		response.getOutputStream().println(gottenUserName);
 	}
 
 	/**
