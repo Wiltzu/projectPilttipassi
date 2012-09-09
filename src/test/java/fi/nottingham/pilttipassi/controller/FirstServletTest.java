@@ -23,12 +23,12 @@ public class FirstServletTest extends TestCase {
 	
 	@Test
 	public void doGetTest() {
-		String content = null;
+		String contents = null;
 		MockHttpServletRequest request = new MockHttpServletRequest();
 		MockHttpServletResponse response = new MockHttpServletResponse();
 		try {
 			firstServlet.doGet(request, response);
-			content = response.getContentAsString();
+			contents = response.getContentAsString();
 		} catch (ServletException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -37,7 +37,7 @@ public class FirstServletTest extends TestCase {
 			e.printStackTrace();
 		}
 		
-		System.out.println(content);
-		assertNotNull(content);
+		System.out.println(contents);
+		assertNotNull(contents);
 	}
 }
